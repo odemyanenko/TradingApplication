@@ -1,5 +1,5 @@
 package de.olgadem.tradingapplication.service;
 
-public interface TradingStraregy {
+public interface TradingStrategy {
   void execute();
 }
