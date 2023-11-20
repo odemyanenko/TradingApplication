@@ -1,0 +1,29 @@
+[{
+  "_id": 1,
+  "name": "strategy 1",
+  "processes": [
+    "setUp",
+    "setAlgoParam(1, 60)",
+    "performCalc",
+    "submitToMarket"
+  ]
+},
+{
+  "_id": 2,
+  "name": "strategy 2",
+  "processes": [
+    "reverse",
+    "setAlgoParam(1, 80)",
+    "submitToMarket"
+  ]
+},
+{
+  "_id": 3,
+  "name": "strategy 3",
+  "processes": [
+    "setAlgoParam(1, 90)",
+    "setAlgoParam(2, 15)",
+    "performCalc",
+    "submitToMarket"
+  ]
+}]

@@ -17,6 +17,10 @@ public class TradingStrategyImpl implements TradingStrategy {
     this.processes = processes;
   }
 
+  public Algo getAlgo() {
+    return algo;
+  }
+
   @Override
   public void execute() {
     if ((processes != null) && !processes.isEmpty()) {
