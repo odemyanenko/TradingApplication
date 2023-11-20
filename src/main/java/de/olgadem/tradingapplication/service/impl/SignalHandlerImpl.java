@@ -14,7 +14,7 @@ import java.util.Map;
 public class SignalHandlerImpl implements SignalHandler {
 
   private final StrategyRepository strategyRepository;
-  private Map<Integer, TradingStrategy> strategies;
+  private final Map<Integer, TradingStrategy> strategies;
 
   public SignalHandlerImpl(StrategyRepository strategyRepository) {
     this.strategyRepository = strategyRepository;
@@ -32,35 +32,7 @@ public class SignalHandlerImpl implements SignalHandler {
   }
 
   private TradingStrategy createTradingStrategy(Strategy strategy) {
-    TradingStrategyImpl tradingStrategy = new TradingStrategyImpl(strategy.getProcesses());
-
-    /*
-    Algo algo = tradingStrategy.getAlgo();
-
-    List<String> processes = strategy.getProcesses();
-    for (String process : processes) {
-      if (process.startsWith("setAlgoParam")) {
-        String[] tokens = process.split("\\(")[1].split(",");
-        int param1 = Integer.parseInt(tokens[0].trim());
-        int param2 = Integer.parseInt(tokens[1].split("\\)")[0].trim());
-
-        try {
-          Method method = Algo.class.getDeclaredMethod("setAlgoParam", int.class, int.class);
-          method.invoke(algo, param1, param2);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-          e.printStackTrace(); // Handle the exception according to your needs
-        }
-      } else {
-        try {
-          Method method = Algo.class.getDeclaredMethod(process);
-          method.invoke(algo);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-          e.printStackTrace(); // Handle the exception according to your needs
-        }
-      }
-    }
-*/
-    return tradingStrategy;
+    return new TradingStrategyImpl(strategy.getProcesses());
   }
 
   public void handleSignal(int signal) {
